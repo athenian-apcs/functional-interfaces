@@ -1,24 +1,39 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.DoubleConsumer;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class MyTests {
     @Test
-    public void testPrime() {
-        assertEquals(false, MyMain.isPrime(100), "100 should not be prime.");
-        assertEquals(true, MyMain.isPrime(97), "97 should be prime.");
-        assertEquals(false, MyMain.isPrime(24), "24 should not be prime.");
-        assertEquals(true, MyMain.isPrime(23), "23 should be prime.");
-        assertEquals(true, MyMain.isPrime(2), "2 should be prime.");
-        assertEquals(false, MyMain.isPrime(15), "15 should not be prime.");
-        assertEquals(true, MyMain.isPrime(7), "7 should be prime.");
+    public void testIncrement() {
+        assertEquals(2, MyMain.increment().applyAsInt(1));
+        assertEquals(4, MyMain.increment().applyAsInt(3));
+        assertEquals(-100, MyMain.increment().applyAsInt(-101));
+        assertEquals(92384, MyMain.increment().applyAsInt(92383));
     }
+
     @Test
-    public void testGCD() {
-        assertEquals(1, MyMain.greatestCommonDivisor(1, 16), "1 should be the greatest common divisor of 1 and 16.");
-        assertEquals(4, MyMain.greatestCommonDivisor(8, 12), "4 should be the greatest common divisor of 8 and 12.");
-        assertEquals(3, MyMain.greatestCommonDivisor(45, 96), "3 should be the greatest common divisor of 45 and 96.");
-        assertEquals(21, MyMain.greatestCommonDivisor(63, 84), "21 should be the greatest common divisor of 63 and 84..");
-        assertEquals(1, MyMain.greatestCommonDivisor(13, 44), "1 should be the greatest common divisor of 13 and 44..");
+    public void testDecrement() {
+        assertEquals(2, MyMain.decrement().applyAsInt(3));
+        assertEquals(4, MyMain.decrement().applyAsInt(5));
+        assertEquals(-100, MyMain.decrement().applyAsInt(-99));
+        assertEquals(92384, MyMain.decrement().applyAsInt(92385));
+    }
+
+    @Test
+    public void testAddToList() {
+        List<Double> list = new ArrayList<>();
+        DoubleConsumer adder = MyMain.addToList(list);
+        assertNotNull(adder);
+        adder.accept(3.9);
+        adder.accept(2.14);
+        adder.accept(100);
+        adder.accept(-2);
+        assertEquals(Arrays.toString(new double[]{3.9, 2.14, 100, -2}), Arrays.toString(list.toArray()));
     }
 }
