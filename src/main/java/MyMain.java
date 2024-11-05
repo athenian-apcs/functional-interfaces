@@ -38,4 +38,5 @@ public class MyMain {
     public static DoubleConsumer addToList (List<Double> list) {
         return null;
     }
+
 }
