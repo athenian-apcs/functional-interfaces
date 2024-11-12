@@ -26,3 +26,11 @@ then further divided based on what type they accept as input. The categories are
 
 These categories have versions for each basic type (for example, you can have an `IntUnaryOperator`, a `DoubleUnaryOperator`,
 a `LongUnaryOperator`, etc).
+
+### How to Use Functional Interfaces
+
+Functional interfaces look complicated, but they're actually really simple! A class implementing a functional interface
+simply has one method: the function being represented by the object. For an example, see problem 1 in `MyMain.java`.
+Because they're so simple, there's a special notation that allows you to create them very easily (but you can still use 
+the complicated version). This is called "lambda notation" or simply a lambda, and you can see an example of it in
+problem 2 in `MyMain.java`.
