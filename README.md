@@ -1,4 +1,4 @@
-# Functional Interfaces Optional Lesson
+# Functional Interfaces Lesson
 
 In this assignment, you'll be learning about functional interfaces. Functional interfaces are interfaces that describe
 functions, as you might be able to guess from the name. However, you likely don't yet know what an interface is.
